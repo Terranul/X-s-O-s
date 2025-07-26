@@ -10,13 +10,6 @@ public class Engine {
 
     public Engine(Boolean playerX) {
         this.boardT = new Board();
-        // try {
-        //     boardT.move(1, true);
-        //     boardT.move(2, true);
-        // } catch (InvalidPositionException e) {
-        //     // TODO Auto-generated catch block
-        //     e.printStackTrace();
-        // }
         this.playerX = playerX;
         state = "Projected draw";
     }
@@ -31,8 +24,7 @@ public class Engine {
         if (possibleMoves.isEmpty()) {
             return 0; // draw
         }
-
-
+        
         int bestScore;
 
         if (isX == playerX) {
@@ -66,6 +58,7 @@ public class Engine {
 
         ArrayList<Integer> possibleMoves = boardT.generateMoves(playerX);
 
+        // create a new board for each possible move
         for (Integer move : possibleMoves) {
             Board updatedBoard = boardT.cloneBoard();
             try {
