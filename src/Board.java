@@ -42,14 +42,6 @@ public class Board {
          }
      }
 
-     // determines if a player has won tic tac toe
-     // xList contains all of the moves played by X's
-     // oList contains all moves played by O's
-     // isX is true when analyzing if X's have won
-     // board layout 
-     // 1 | 2 | 3
-     // 4 | 5 | 6
-     // 7 | 8 | 9
      public Boolean hasPlayerWon(Boolean isX) {
          if (isX) {
              for (ArrayList<Integer> combo : winningCombos) {
@@ -68,6 +60,7 @@ public class Board {
      }
 
 
+     // load all possible ways to win
      public void generateWinningMovesList() {
          winningCombos = new ArrayList<>();
 
